@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APUSH Unit IV Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --gold: #c9a84c;
+    --cream: #f5f0e8;
+    --red: #8b1a1a;
+    --slate: #3d4f6b;
+    --light-gold: #e8d5a3;
+    --text: #1e1e2e;
+    --muted: #5a5a72;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--navy);
+    color: white;
+    padding: 3rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(201,168,76,0.05) 40px,
+      rgba(201,168,76,0.05) 41px
+    );
+  }
+  .header-label {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    position: relative;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    position: relative;
+  }
+  header h1 span { color: var(--gold); }
+  .header-sub {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    font-style: italic;
+    position: relative;
+  }
+  .gold-rule {
+    width: 80px;
+    height: 2px;
+    background: var(--gold);
+    margin: 1.25rem auto 0;
+    position: relative;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--slate);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  nav a {
+    color: var(--light-gold);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.6rem;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s;
+  }
+  nav a:hover { background: var(--gold); color: var(--navy); }
+
+  /* ── LAYOUT ── */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 3.5rem;
+    border-left: 4px solid var(--gold);
+    padding-left: 1.75rem;
+    animation: fadeUp 0.5s ease both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    opacity: 0.5;
+  }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+  }
+  .section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--red);
+    margin: 1.5rem 0 0.5rem;
+    border-bottom: 1px solid rgba(139,26,26,0.2);
+    padding-bottom: 0.25rem;
+  }
+
+  /* ── CONTENT BLOCKS ── */
+  .section p {
+    margin-bottom: 0.75rem;
+    font-size: 0.97rem;
+  }
+
+  .key-box {
+    background: var(--navy);
+    color: white;
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+  }
+  .key-box h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .key-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .key-box ul li {
+    padding: 0.25rem 0;
+    font-size: 0.92rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    line-height: 1.5;
+  }
+  .key-box ul li:last-child { border-bottom: none; }
+  .key-box ul li::before {
+    content: '▸ ';
+    color: var(--gold);
+    font-size: 0.75rem;
+  }
+
+  .callout {
+    background: rgba(201,168,76,0.12);
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    padding: 0.9rem 1.2rem;
+    margin: 1rem 0;
+    font-size: 0.93rem;
+    font-style: italic;
+  }
+  .callout strong {
+    font-style: normal;
+    color: var(--red);
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  @media (max-width: 620px) { .two-col { grid-template-columns: 1fr; } }
+
+  .mini-card {
+    background: white;
+    border: 1px solid rgba(26,39,68,0.15);
+    border-radius: 4px;
+    padding: 0.9rem;
+    font-size: 0.9rem;
+  }
+  .mini-card h5 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.92rem;
+  }
+  .timeline-date {
+    min-width: 50px;
+    font-weight: 600;
+    color: var(--red);
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* ── VOCAB TABLE ── */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+    margin: 1rem 0;
+    border: 1px solid rgba(26,39,68,0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    font-size: 0.9rem;
+  }
+  .vocab-grid .vh, .vocab-grid .vd {
+    padding: 0.55rem 0.85rem;
+    border-bottom: 1px solid rgba(26,39,68,0.1);
+  }
+  .vocab-grid .vh {
+    background: var(--navy);
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .vocab-grid .vd { background: white; }
+  .vocab-grid .vh:last-of-type,
+  .vocab-grid .vd:last-of-type { border-bottom: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(26,39,68,0.15);
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="header-label">AP United States History · Unit IV</p>
+  <h1>From Empire to<br><span>World Power</span></h1>
+  <p class="header-sub">1890 – 1945 · Test Prep Study Guide</p>
+  <div class="gold-rule"></div>
+</header>
+
+<nav>
+  <a href="#span-am-war">Span-Am War</a>
+  <a href="#prog-pop">Progressives & Populists</a>
+  <a href="#wwi">World War I</a>
+  <a href="#dissent">Curbing Dissent</a>
+  <a href="#league">League Debate</a>
+  <a href="#1920s">The 1920s</a>
+  <a href="#great-migration">Great Migration</a>
+  <a href="#culture-wars">Culture Wars</a>
+  <a href="#depression">Great Depression</a>
+  <a href="#new-deal">New Deal</a>
+  <a href="#wwii-foreign">WWII Foreign Policy</a>
+  <a href="#wwii-domestic">WWII Home Front</a>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════════════════
+     1. SPANISH-AMERICAN WAR
+══════════════════════════════════════════════ -->
+<section class="section" id="span-am-war" style="animation-delay:0.05s">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <h2>The Spanish-American War (1898)</h2>
+  </div>
+
+  <h3>Background & Causes</h3>
+  <p>By the 1890s, the U.S. had compelling economic and ideological reasons to expand overseas. The depression of the 1890s pushed policymakers to seek foreign markets; Alfred Mahan's naval theory argued sea power was essential; Social Darwinism and Anglo-Saxon racial ideology provided justification; and Josiah Strong's missionary Protestantism urged overseas expansion.</p>
+  <p>Cuba became the flashpoint. In 1895, Cuban patriots launched a guerrilla war against Spain. Spanish commander Weyler rounded up civilians into concentration camps, where up to 200,000 died. "Yellow journalists" like William Randolph Hearst inflamed American public opinion.</p>
+
+  <div class="two-col">
+    <div class="mini-card">
+      <h5>Key Events Leading to War</h5>
+      <ul style="padding-left:1rem; font-size:0.88rem;">
+        <li>De Lôme Letter published (Feb. 1898)</li>
+        <li>USS <em>Maine</em> explodes in Havana harbor (Feb. 15)</li>
+        <li>McKinley asks Congress for authority to intervene (Apr. 11)</li>
+        <li>Spain declares war on U.S. (Apr. 24)</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h5>Teller Amendment</h5>
+      <p style="font-size:0.88rem;">Added by Sen. Henry Teller — U.S. disclaimed any intention to <em>occupy</em> Cuba. Reassured Americans the war was about liberty, not colonialism. McKinley privately disagreed ("We must keep what we want").</p>
+    </div>
+  </div>
+
+  <h3>Fighting the War</h3>
+  <p>The first engagement was in the <strong>Pacific</strong>: Commodore Dewey destroyed the Spanish fleet at Manila Bay (May 1, 1898). In Cuba, the battle of <strong>San Juan Hill</strong> (July 1) was pivotal — four African American regiments bore the brunt of fighting. The Spanish fleet was destroyed July 3; Spain surrendered days later.</p>
+
+  <h3>Spoils of War & Aftermath</h3>
+  <p>The <strong>Treaty of Paris</strong> gave the U.S. Puerto Rico, Guam, and the Philippines ($20 million paid to Spain). Cuba gained nominal independence but was subject to the <strong>Platt Amendment (1902)</strong>, which allowed U.S. intervention and established the Guantánamo naval base. Hawaii was annexed in July 1898.</p>
+
+  <div class="callout">
+    <strong>Philippine-American War (1899–1902):</strong> Emilio Aguinaldo's forces fought U.S. occupation. Over 4,200 Americans and an estimated 200,000 Filipinos died. The U.S. Army used counterinsurgency tactics similar to Spain's in Cuba, raising moral contradictions about empire.
+  </div>
+
+  <div class="key-box">
+    <h4>Key Terms</h4>
+    <ul>
+      <li><strong>Teller Amendment</strong> — Disclaimed U.S. intention to annex Cuba</li>
+      <li><strong>Platt Amendment</strong> — Limited Cuban sovereignty; gave U.S. right to intervene</li>
+      <li><strong>Insular Cases (1901)</strong> — Supreme Court ruled Constitution did not auto-extend to conquered territories</li>
+      <li><strong>Roosevelt Corollary (1904)</strong> — U.S. claimed right to police Caribbean nations</li>
+      <li><strong>Open Door Policy</strong> — Equal trade access to China for all nations</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     2. PROGRESSIVES & POPULISTS
+══════════════════════════════════════════════ -->
+<section class="section" id="prog-pop" style="animation-delay:0.1s">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <h2>Progressives &amp; Populists</h2>
+  </div>
+
+  <h3>Populism (1880s–1896)</h3>
+  <p>Populists arose from rural farmers crushed by falling crop prices, railroad monopolies, and tight money. The <strong>People's Party</strong> platform (1892) called for government ownership of railroads, a graduated income tax, direct election of senators, and a flexible currency (silver coinage). William Jennings Bryan's "Cross of Gold" speech made silver the 1896 campaign issue — but he lost to McKinley, ending Populism's peak moment.</p>
+
+  <h3>Progressivism (1890s–1917)</h3>
+  <p>Progressives were largely middle-class, urban reformers who believed scientific management and government regulation could cure industrial-era problems. Unlike Populists, they focused on corruption, monopolies, labor conditions, and democratic reform rather than agrarian grievances.</p>
+
+  <div class="two-col">
+    <div class="mini-card">
+      <h5>Progressive Goals</h5>
+      <ul style="padding-left:1rem; font-size:0.88rem;">
+        <li>Trust-busting (Sherman Antitrust Act enforcement)</li>
+        <li>Labor protections (child labor laws, workplace safety)</li>
+        <li>Political reforms (initiative, referendum, recall; 17th Amendment)</li>
+        <li>Women's suffrage (achieved 1920 — 19th Amendment)</li>
+        <li>Temperance / Prohibition (18th Amendment)</li>
+        <li>Pure Food &amp; Drug Act (1906)</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h5>Key Figures</h5>
+      <ul style="padding-left:1rem; font-size:0.88rem;">
+        <li><strong>TR</strong> — "Trust-buster," Square Deal, conservation</li>
+        <li><strong>Woodrow Wilson</strong> — New Freedom, Federal Reserve, Clayton Act</li>
+        <li><strong>Jane Addams</strong> — Hull House, settlement movement</li>
+        <li><strong>Ida Tarbell</strong> — Muckraker, exposed Standard Oil</li>
+        <li><strong>Eugene Debs</strong> — Socialist leader, labor advocate</li>
+        <li><strong>W.E.B. Du Bois</strong> — Niagara Movement, co-founded NAACP</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Connection:</strong> Theodore Roosevelt explicitly linked domestic progressivism to imperialism — a strong federal government asserting itself at home and abroad. Overseas expansion and domestic reform were two sides of the same nationalist coin.
+  </div>
+
+  <h3>Limits of Progressivism</h3>
+  <p>Most progressive reforms excluded or harmed African Americans. Jim Crow laws intensified. Wilson segregated the federal government. Booker T. Washington advocated accommodation while Du Bois demanded full civil rights — the tension between these approaches dominated Black political thought of the era.</p>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     3. WORLD WAR I
+══════════════════════════════════════════════ -->
+<section class="section" id="wwi" style="animation-delay:0.15s">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <h2>World War I</h2>
+  </div>
+
+  <h3>Causes &amp; U.S. Neutrality</h3>
+  <p>WWI began in 1914 after the assassination of Archduke Franz Ferdinand triggered Europe's alliance system. The Triple Entente (Britain, France, Russia) faced the Central Powers (Germany, Austria-Hungary). Wilson declared neutrality, but American trade overwhelmingly favored the Allies — by 1917, U.S. banks had lent $2.5 billion to Britain and France vs. $56 million to Germany.</p>
+
+  <div class="two-col">
+    <div class="mini-card">
+      <h5>Path to War</h5>
+      <ul style="padding-left:1rem; font-size:0.88rem;">
+        <li>German U-boat campaign → <em>Lusitania</em> sunk (1,198 dead, 128 Americans), May 1915</li>
+        <li>Sussex Pledge (1916): Germany suspends unrestricted sub warfare</li>
+        <li>Germany resumes unrestricted submarine warfare (Feb. 1917)</li>
+        <li>Zimmermann Telegram: Germany offers Mexico Texas, NM, AZ</li>
+        <li>U.S. declares war April 6, 1917</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h5>Wilson's War Aims</h5>
+      <ul style="padding-left:1rem; font-size:0.88rem;">
+        <li>Make the world "safe for democracy"</li>
+        <li>Fourteen Points (Jan. 1918): open diplomacy, freedom of seas, self-determination, League of Nations</li>
+        <li>No territorial conquests for the U.S.</li>
+        <li>A "peace among equals" — no victors</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Fighting the War</h3>
+  <p>General Pershing commanded the American Expeditionary Force (AEF). The U.S. Army grew from 200,000 to nearly 4 million; the draft was instituted May 1917. Over 400,000 African Americans served in segregated units. American troops and supplies helped break German lines in the Meuse-Argonne Offensive (Sept.–Nov. 1918); 26,000 Americans died. Germany signed the armistice <strong>November 11, 1918</strong>.</p>
+
+  <h3>Home Front Mobilization</h3>
+  <p>The War Industries Board (WIB) directed war production. The National War Labor Board established an 8-hour day and endorsed workers' right to organize. The Food Administration under Herbert Hoover dramatically expanded agricultural output. Women took industrial jobs in vast numbers; the war effort helped push through the 19th Amendment in 1920. The Great Migration of African Americans to northern cities accelerated sharply.</p>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     4. CURBING DISSENT
+══════════════════════════════════════════════ -->
+<section class="section" id="dissent" style="animation-delay:0.2s">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <h2>Curbing Dissent in the U.S.</h2>
+  </div>
+
+  <p>WWI produced a fierce crackdown on free speech and civil liberties, driven by Wilson's desire to enforce "100 percent loyalty."</p>
+
+  <div class="key-box">
+    <h4>Key Laws &amp; Actions</h4>
+    <ul>
+      <li><strong>Espionage Act (1917)</strong> — Criminalized interference with military operations or enlistment</li>
+      <li><strong>Sedition Act (1918)</strong> — Prohibited speech that might "incite, provoke, or encourage resistance" to the U.S. or "promote the cause of its enemies"</li>
+      <li><strong>Committee on Public Information (CPI)</strong> — Government propaganda agency under George Creel; distributed 75 million pamphlets; deployed "Four-Minute Men"</li>
+      <li><strong>American Protective League</strong> — 250,000 quasi-vigilante "agents" spying on neighbors</li>
+    </ul>
+  </div>
+
+  <h3>Targets of Repression</h3>
+  <p><strong>German Americans</strong> faced intense persecution — sauerkraut was renamed "liberty cabbage," liederkranz societies disbanded, some were lynched. <strong>Eugene V. Debs</strong> was sentenced to 10 years in prison for a speech arguing capitalists started the war. The <strong>IWW (Industrial Workers of the World)</strong> was prosecuted for opposing the war. Over 1,000 people were convicted under the new laws.</p>
+
+  <h3>Supreme Court Cases</h3>
+  <div class="two-col">
+    <div class="mini-card">
+      <h5>Schenck v. United States (1919)</h5>
+      <p style="font-size:0.88rem;">Holmes upheld conviction of socialist who distributed anti-draft pamphlets. Established "clear and present danger" test — speech could be limited if it posed an immediate threat.</p>
+    </div>
+    <div class="mini-card">
+      <h5>Abrams v. United States (1919)</h5>
+      <p style="font-size:0.88rem;">Court upheld prosecution for leaflets criticizing U.S. intervention in Russia. Holmes and Brandeis dissented, defending free speech and questioning what counts as "clear and present danger."</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Legacy:</strong> These wartime restrictions set precedents for peacetime repression. The nativist hysteria they generated lingered into the 1920s, fueling the Red Scare and immigration restriction.
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     5. LEAGUE OF NATIONS DEBATE
+══════════════════════════════════════════════ -->
+<section class="section" id="league" style="animation-delay:0.25s">
+  <div class="section-header">
+    <span class="section-num">05</span>
+    <h2>The Debate Over the League of Nations</h2>
+  </div>
+
+  <h3>Treaty of Versailles (1919)</h3>
+  <p>Wilson's Fourteen Points were the basis for negotiations, but Britain's Lloyd George and France's Clemenceau imposed harsh terms on Germany: $33 billion in reparations, loss of territory, war-guilt clause. Wilson managed to create nine new nations on the principle of self-determination and — crucially — to establish the <strong>League of Nations</strong>.</p>
+
+  <div class="callout">
+    <strong>The League's Core:</strong> Article X required members to guarantee each other's independence and territorial integrity, and authorized collective military action against aggressors. Wilson saw it as the mechanism that would "end all wars."
+  </div>
+
+  <h3>Opposition in the Senate</h3>
+  <div class="two-col">
+    <div class="mini-card">
+      <h5>"Irreconcilables"</h5>
+      <p style="font-size:0.88rem;">Senators like Hiram Johnson (CA) and Robert La Follette (WI) — western progressive Republicans — opposed <em>any</em> U.S. involvement in European affairs on principled isolationist grounds.</p>
+    </div>
+    <div class="mini-card">
+      <h5>Lodge Reservationists</h5>
+      <p style="font-size:0.88rem;">Sen. Henry Cabot Lodge led Republicans who objected specifically to Article X — feared it would obligate the U.S. to go to war on orders of an international body, compromising Congressional war powers.</p>
+    </div>
+  </div>
+
+  <h3>Wilson's Failure</h3>
+  <p>Wilson refused to accept any amendments, declaring "The Senate must take its medicine." He launched an exhausting national speaking tour to rally public opinion, collapsed in Colorado (Sept. 1919), then suffered a paralyzing stroke. Unable to negotiate, Wilson instructed Democratic senators to reject all Republican amendments. The treaty failed in November 1919 and again in March 1920 (seven votes short of the two-thirds needed).</p>
+
+  <p>The U.S. never ratified the Treaty or joined the League. Without American membership, the League lacked both the economic and military power to stop aggression — contributing to the conditions that produced World War II.</p>
+
+  <div class="key-box">
+    <h4>Why It Matters</h4>
+    <ul>
+      <li>Treaty's harsh terms on Germany → economic collapse → Hitler's rise</li>
+      <li>League without U.S. = toothless; couldn't stop Japan, Italy, or Germany in the 1930s</li>
+      <li>Debate previewed 1930s isolationism vs. internationalism</li>
+      <li>Wilson died in 1924 with his "dream of a just international order" in ruins</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     6. THE 1920s
+══════════════════════════════════════════════ -->
+<section class="section" id="1920s" style="animation-delay:0.3s">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <h2>The 1920s</h2>
+  </div>
+
+  <p>The decade was defined by economic prosperity (for many), Republican dominance in politics, a retreat from progressivism, and a fierce backlash against modernity and immigration. It ended in catastrophic economic collapse.</p>
+
+  <h3>Republican Politics ("Normalcy")</h3>
+  <p>Harding, Coolidge, and Hoover dominated the decade. "Not nostrums but normalcy" summed up the Republican agenda: lower taxes, less regulation, probusiness governance. The FTC stopped enforcing antitrust. Hoover's Commerce Department promoted "associated state" cooperation between government and business. The Teapot Dome scandal (oil leases to private companies for bribes) marred Harding's legacy.</p>
+
+  <h3>Economic Boom &amp; Its Limits</h3>
+  <p>Per capita income rose 24% between 1922–1929. The automobile industry boomed, creating ripple effects in steel, oil, rubber, and glass. Consumer culture exploded — installment credit, radio, Hollywood movies. But agriculture never recovered from the 1921 recession; the bottom 40% earned only ~$725/year; and stock speculation created dangerous financial fragility.</p>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     7. GREAT MIGRATION
+══════════════════════════════════════════════ -->
+<section class="section" id="great-migration" style="animation-delay:0.35s">
+  <div class="section-header">
+    <span class="section-num">07</span>
+    <h2>The Great Migration</h2>
+  </div>
+
+  <h3>What It Was</h3>
+  <p>During and after WWI, more than <strong>400,000 African Americans</strong> migrated from the South to northern industrial cities — Chicago, Detroit, New York, St. Louis. Northern factories, desperate for labor with white men at the front, recruited Black workers. "It is a matter of a dollar with me," wrote one woman to her sister. "Work is plentiful here."</p>
+
+  <h3>Push &amp; Pull Factors</h3>
+  <div class="two-col">
+    <div class="mini-card">
+      <h5>Push (leaving the South)</h5>
+      <ul style="padding-left:1rem; font-size:0.88rem;">
+        <li>Jim Crow segregation and disenfranchisement</li>
+        <li>Lynchings and racial violence (78 lynchings in 1919 alone)</li>
+        <li>Sharecropping poverty, crop failures</li>
+        <li>Limited educational opportunities</li>
+      </ul>
+    </div>
+    <div class="mini-card">
+      <h5>Pull (going North)</h5>
+      <ul style="padding-left:1rem; font-size:0.88rem;">
+        <li>War industry jobs at better wages</li>
+        <li>Ability to vote in northern states</li>
+        <li>Less overt racial violence</li>
+        <li>Access to better schools</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Consequences</h3>
+  <p>The Great Migration transformed northern cities and created new Black political and cultural power. However, it also sparked fierce white resistance. <strong>Race riots</strong> erupted in over 25 cities in 1919 ("Red Summer"): Chicago's riot killed 38, St. Louis's killed 9 whites and 40+ Blacks. The <strong>Tulsa Race Massacre (1921)</strong> destroyed the prosperous Greenwood district ("Black Wall Street"), killing dozens and burning 35 blocks.</p>
+
+  <h3>Harlem Renaissance</h3>
+  <p>The migration tripled New York's Black population, enabling a flowering of African American art, literature, and music in Harlem. Langston Hughes, Zora Neale Hurston, Claude McKay, Jacob Lawrence, and others created bold new art forms asserting racial pride. Jazz spread from New Orleans through Chicago and New York, becoming the era's defining music — Fitzgerald called the decade the "Jazz Age." Marcus Garvey's UNIA mobilized 4 million followers around pan-African Black separatism.</p>
+
+  <div class="key-box">
+    <h4>Key People &amp; Movements</h4>
+    <ul>
+      <li><strong>Langston Hughes</strong> — Poet; "I am a Negro — and beautiful"</li>
+      <li><strong>Zora Neale Hurston</strong> — Novelist; celebrated Black folk culture</li>
+      <li><strong>Louis Armstrong</strong> — Jazz trumpeter; elevated improvised solo</li>
+      <li><strong>Marcus Garvey / UNIA</strong> — "Back to Africa" pan-African movement</li>
+      <li><strong>W.E.B. Du Bois</strong> — NAACP; Pan-African Congress at Versailles</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     8. CULTURE WARS OF THE 1920s
+══════════════════════════════════════════════ -->
+<section class="section" id="culture-wars" style="animation-delay:0.4s">
+  <div class="section-header">
+    <span class="section-num">08</span>
+    <h2>Culture Wars of the 1920s</h2>
+  </div>
+
+  <p>The 1920s were a decade of sharp cultural conflict between urban modernity and rural Protestant traditionalism. Cities had grown enormously; by 1929, 93 U.S. cities had populations over 100,000. Native-born rural Protestants felt their values under siege.</p>
+
+  <h3>Prohibition (18th Amendment, 1920)</h3>
+  <p>Rural Protestant temperance advocates celebrated prohibition as a moral victory. But urban Americans flouted the law en masse — speakeasies proliferated, Al Capone profited, and the border towns of Tijuana and Mexicali boomed. Enforcement was nearly impossible. Prohibition was repealed in 1933 (21st Amendment).</p>
+
+  <h3>The Scopes Trial (1925)</h3>
+  <p>Tennessee outlawed teaching evolution. The ACLU challenged the law; teacher John Scopes was prosecuted. Defense attorney Clarence Darrow faced prosecutor William Jennings Bryan in a nationally broadcast circus — the "Monkey Trial." Scopes was convicted (later overturned), but the trial exposed fundamentalist beliefs to ridicule. The law stayed on the books for 30+ years.</p>
+
+  <h3>Nativism &amp; Immigration Restriction</h3>
+  <p>Anti-immigrant sentiment peaked after WWI. Congress passed emergency restrictions in 1921 and the <strong>National Origins Act (1924)</strong>, which used 1890 census data to set quotas, drastically limiting immigration from Southern and Eastern Europe (Italians, Poles, Greeks, Jews) while effectively banning most Asian immigration. By 1929, the annual cap was 150,000 Europeans.</p>
+
+  <h3>Ku Klux Klan</h3>
+  <p>The revived Klan (born 1915) reached over <strong>3 million members</strong> by the mid-1920s and wielded significant political clout across the country — not just the South. Targeting Catholics, Jews, and immigrants as well as Blacks, KKK-backed candidates won governorships and Senate seats. The Klan declined after 1925 but left a lasting legacy of white supremacist organizing.</p>
+
+  <div class="two-col">
+    <div class="mini-card">
+      <h5>The Red Scare (1919–1920)</h5>
+      <p style="font-size:0.88rem;">Fear of Bolshevism after the Russian Revolution. AG Palmer's raids arrested thousands of aliens without charges; 6,000 arrested in one night (Jan. 1920). J. Edgar Hoover ran the antiradicalism division. Sacco and Vanzetti case epitomized how ethnic background and radicalism became grounds for prosecution.</p>
+    </div>
+    <div class="mini-card">
+      <h5>The 1928 Election</h5>
+      <p style="font-size:0.88rem;">Democrat Al Smith — Irish Catholic, New York, anti-Prohibition — vs. Herbert Hoover. Smith's religion cost him the South for the first time since Reconstruction. Hoover won 444 electoral votes. But Smith carried the 12 largest cities, signaling a Democratic coalition building among urban workers and immigrants.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     9. GREAT DEPRESSION
+══════════════════════════════════════════════ -->
+<section class="section" id="depression" style="animation-delay:0.45s">
+  <div class="section-header">
+    <span class="section-num">09</span>
+    <h2>The Great Depression</h2>
+  </div>
+
+  <h3>Causes</h3>
+  <p>The Depression was caused by a combination of domestic and international factors that fed on each other. The stock market crash of October–November 1929 was the trigger, but underlying weaknesses made the collapse catastrophic.</p>
+
+  <div class="key-box">
+    <h4>Key Causes</h4>
+    <ul>
+      <li><strong>Stock speculation &amp; buying on margin</strong> — $20 of your own money + $80 borrowed to buy $100 of stock</li>
+      <li><strong>Overextended consumer credit</strong> — Consumer lending was the 10th-largest U.S. industry by 1927</li>
+      <li><strong>Agricultural weakness</strong> — Farm prices had been depressed since the 1921 recession</li>
+      <li><strong>Bank failures</strong> — No deposit insurance; nearly 9,000 banks closed; savings simply vanished</li>
+      <li><strong>Gold standard rigidity</strong> — Prevented monetary flexibility needed in crisis</li>
+      <li><strong>Smoot-Hawley Tariff (1930)</strong> — Triggered retaliatory tariffs, further collapsing global trade</li>
+      <li><strong>Global debt &amp; WWI reparations</strong> — Germany's economic collapse spread internationally</li>
+    </ul>
+  </div>
+
+  <h3>Scale of the Collapse</h3>
+  <p>GDP fell from $103 billion to $58 billion. Unemployment reached <strong>25% by 1932</strong> — 15 million people without work. Industrial production fell 37%; construction plunged 78%. Nearly 9,000 banks closed. Half a million Americans lost their homes between 1930–1932.</p>
+
+  <h3>Hoover's Response (and Its Limits)</h3>
+  <p>Hoover was not a do-nothing president — he expanded federal spending for public works by $700 million and created the Reconstruction Finance Corporation. But he clung to the gold standard, refused direct relief to the unemployed (viewing it as a character threat), and supported the disastrous Smoot-Hawley Tariff. The RFC lent only 20% of its available funds. When the Bonus Army marched on Washington (1932), Hoover had General MacArthur forcibly evict and burn their encampment — devastating his popularity.</p>
+
+  <div class="callout">
+    <strong>Human Cost:</strong> "We do not dare to use even a little soap when it will pay for an extra egg." — A jobless Oregonian. Couples delayed marriage; the birth rate dropped to historical lows. Barter systems emerged. Salt Lake City went bankrupt in 1931.
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     10. NEW DEAL
+══════════════════════════════════════════════ -->
+<section class="section" id="new-deal" style="animation-delay:0.5s">
+  <div class="section-header">
+    <span class="section-num">10</span>
+    <h2>The New Deal</h2>
+  </div>
+
+  <h3>FDR &amp; the First Hundred Days (1933)</h3>
+  <p>Roosevelt won the 1932 election with 22.8 million votes, promising "bold, persistent experimentation." In his first Hundred Days, Congress enacted 15 major bills addressing banking, agriculture, manufacturing, and unemployment.</p>
+
+  <div class="vocab-grid">
+    <div class="vh">Program</div><div class="vh">What It Did</div>
+    <div class="vd">Emergency Banking Act</div><div class="vd">Closed banks; reopened only those with sufficient reserves; ended bank runs</div>
+    <div class="vd">Glass-Steagall / FDIC</div><div class="vd">Insured deposits up to $2,500; separated commercial and investment banking</div>
+    <div class="vd">AAA</div><div class="vd">Paid farmers to reduce production of key crops; raised farm prices</div>
+    <div class="vd">NRA</div><div class="vd">Set prices, production quotas in 600 industries; voided by Supreme Court 1935</div>
+    <div class="vd">CCC</div><div class="vd">Employed 250,000 young men in conservation; built infrastructure in national parks</div>
+    <div class="vd">FERA / CWA / PWA</div><div class="vd">Federal relief funds and public works; CWA briefly employed 4 million</div>
+    <div class="vd">TVA</div><div class="vd">Dam-building, flood control, cheap electricity for the Tennessee Valley</div>
+    <div class="vd">HOLC</div><div class="vd">Refinanced over 1 million home mortgages; prevented foreclosures</div>
+  </div>
+
+  <h3>Second New Deal (1935–1938)</h3>
+  <p>Responding to challenges from Huey Long, Father Coughlin, and Francis Townsend — and pressure from organized labor — FDR shifted left. The Second New Deal focused on social justice and a permanent safety net.</p>
+
+  <div class="two-col">
+    <div class="mini-card">
+      <h5>Wagner Act (1935)</h5>
+      <p style="font-size:0.88rem;">Upheld workers' right to organize; created the NLRB to prevent employer coercion. Led to massive union growth — CIO unionized entire industries. Union membership tripled to 23% of the workforce by decade's end.</p>
+    </div>
+    <div class="mini-card">
+      <h5>Social Security Act (1935)</h5>
+      <p style="font-size:0.88rem;">Old-age pensions, unemployment compensation, Aid to Dependent Children. A milestone: never before had the federal government assumed such responsibility for citizens' welfare. Excluded domestic workers and agricultural laborers (disproportionately Black).</p>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="mini-card">
+      <h5>WPA (1935)</h5>
+      <p style="font-size:0.88rem;">Works Progress Administration under Harry Hopkins. Employed 8.5 million between 1935–1943; built 651,000 miles of road, 124,000 bridges, 125,000 public buildings. Also funded artists, writers (Zora Neale Hurston, Ralph Ellison), and musicians.</p>
+    </div>
+    <div class="mini-card">
+      <h5>Revenue Act of 1935</h5>
+      <p style="font-size:0.88rem;">Higher taxes on corporate profits and large incomes. FDR's answer to Huey Long's "Share Our Wealth" movement. Conservatives attacked it as "soak the rich" legislation.</p>
+    </div>
+  </div>
+
+  <h3>Critics &amp; Limits</h3>
+  <p>From the <em>right</em>: Liberty League and NAM condemned New Deal as socialism. Supreme Court struck down NRA and AAA. FDR's court-packing plan (1937) failed but ultimately succeeded — Court shifted to uphold Wagner Act and Social Security.</p>
+  <p>From the <em>left</em>: Huey Long's Share Our Wealth, Townsend Plan for elderly pensions, Father Coughlin's National Union for Social Justice all argued New Deal hadn't gone far enough. The Roosevelt Recession of 1937–38 (caused by premature spending cuts) briefly raised unemployment back to 19%.</p>
+  <p><strong>Racial limits:</strong> Social Security excluded domestic workers and farm laborers. AAA hurt Black sharecroppers. Civilian Conservation Corps was segregated. Roosevelt refused to support federal anti-lynching legislation to preserve Southern Democratic support.</p>
+
+  <div class="callout">
+    <strong>Legacy:</strong> The New Deal created the modern American welfare state, realigned politics (New Deal coalition = labor, immigrants, Northern Blacks, farmers, middle class), and permanently expanded the federal government's role in economic life. But it did not end the Depression — that took WWII defense spending.
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     11. WWII: INTERWAR FOREIGN POLICY
+══════════════════════════════════════════════ -->
+<section class="section" id="wwii-foreign" style="animation-delay:0.55s">
+  <div class="section-header">
+    <span class="section-num">11</span>
+    <h2>WWII: Interwar Foreign Policy</h2>
+  </div>
+
+  <h3>Rise of Fascism</h3>
+  <p>The Depression, WWI resentments, and fear of communism fueled fascism in Europe and Asia. Hitler became Chancellor of Germany in 1933, quickly establishing a dictatorship, rearming Germany (violating Versailles), and beginning persecution of Jews. Mussolini invaded Ethiopia (1935) — League of Nations condemned but did nothing. Japan invaded Manchuria (1931) and China (1937).</p>
+
+  <h3>American Isolationism</h3>
+  <p>The Nye Committee (1934) alleged arms manufacturers had pushed the U.S. into WWI — though unproven, this fed isolationism. Congress responded with the <strong>Neutrality Acts (1935–37)</strong>: embargo on arms sales to warring nations, ban on loans to belligerents, "cash and carry" for non-military goods. The America First Committee (with Lindbergh) was the leading isolationist voice.</p>
+
+  <h3>Appeasement &amp; Its Failure</h3>
+  <p>Britain and France capitulated to Hitler's demands at the <strong>Munich Conference (1938)</strong> — giving him the Sudetenland in exchange for pledges of no further aggression. Hitler called this a sign of weak enemies. Within six months he had seized all of Czechoslovakia; on September 1, 1939, he invaded Poland. WWII had begun.</p>
+
+  <h3>The Road to U.S. Entry</h3>
+  <div class="timeline-item"><span class="timeline-date">1939</span><span>Germany invades Poland; Britain &amp; France declare war; U.S. declares neutrality but allows Allies to buy arms (cash &amp; carry)</span></div>
+  <div class="timeline-item"><span class="timeline-date">1940</span><span>France falls; Roosevelt trades destroyers for British bases; first peacetime draft; wins unprecedented 3rd term</span></div>
+  <div class="timeline-item"><span class="timeline-date">1941</span><span>Lend-Lease Act (March) — arms to any nation whose defense is vital to U.S. security; Atlantic Charter with Churchill; Germany invades USSR; U.S. extends Lend-Lease to Soviets</span></div>
+  <div class="timeline-item"><span class="timeline-date">Dec 7, 1941</span><span>Japan attacks Pearl Harbor — 2,400 dead, battleships destroyed; Congress declares war; Germany &amp; Italy declare war on U.S.</span></div>
+
+  <div class="callout">
+    <strong>Four Freedoms (Jan. 1941):</strong> Roosevelt's speech defined the war's purpose: freedom of speech, freedom of religion, freedom from want, freedom from fear. Linked the global war to New Deal ideals at home.
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     12. WWII: DOMESTIC POLICY
+══════════════════════════════════════════════ -->
+<section class="section" id="wwii-domestic" style="animation-delay:0.6s">
+  <div class="section-header">
+    <span class="section-num">12</span>
+    <h2>WWII &amp; Domestic Policy</h2>
+  </div>
+
+  <h3>Economic Mobilization</h3>
+  <p>Defense spending — not the New Deal — ended the Great Depression. GDP nearly doubled between 1940–1945. The <strong>War Production Board (WPB)</strong> directed military contracts and allocated resources; the top 56 corporations received ¾ of war contracts. Henry Kaiser revolutionized shipbuilding with mass production. By 1943, two-thirds of the U.S. economy was in the war effort.</p>
+
+  <p>The Revenue Act of 1942 expanded income taxpayers from 3.9 million to 42.6 million — establishing the modern tax system. The government also sold war bonds. Federal employment nearly quadrupled to 3.8 million, creating what became the "military-industrial complex."</p>
+
+  <h3>Labor &amp; Women</h3>
+  <p>Labor shortages opened industrial jobs to women and African Americans for the first time. "Rosie the Riveter" became the iconic image. Women made up 36% of the labor force by 1945 (up from 24%). About 1 million women joined the paid workforce for the first time. The NWLB established wages, hours, and working conditions; unions grew to 15 million members by 1945.</p>
+
+  <div class="callout">
+    <strong>After the war:</strong> Most women were pushed out of industrial jobs. But the habit of women working outside the home didn't disappear — female labor force participation continued rising throughout the postwar decades.
+  </div>
+
+  <h3>African Americans &amp; Civil Rights</h3>
+  <p>Black Americans waged the <strong>"Double V" campaign</strong> — victory over fascism abroad and racism at home. A. Philip Randolph threatened a March on Washington (1941); FDR issued <strong>Executive Order 8802</strong>, banning discrimination in defense industries and creating the Fair Employment Practices Commission (FEPC). The NAACP grew ninefold to 450,000 members. James Farmer co-founded CORE in Chicago (1942). These developments laid groundwork for the civil rights movement.</p>
+
+  <h3>Japanese American Internment</h3>
+  <p>After Pearl Harbor, anti-Japanese hysteria on the West Coast led FDR to issue <strong>Executive Order 9066 (1942)</strong>, authorizing the forced relocation of 112,000 Japanese Americans — 2/3 of whom were native-born U.S. citizens (Nisei) — to internment camps. Families were given days to dispose of their property. The Supreme Court upheld internment in <em>Korematsu v. United States (1944)</em>. Congress apologized and awarded $20,000 to survivors in 1988.</p>
+
+  <div class="two-col">
+    <div class="mini-card">
+      <h5>GI Bill (1944)</h5>
+      <p style="font-size:0.88rem;">Servicemen's Readjustment Act provided education, job training, medical care, pensions, and mortgage loans for veterans. Transformed postwar America — by 1950, WWII vets were ⅓ of all American men over 19. Enabled massive suburban homeownership and college enrollment.</p>
+    </div>
+    <div class="mini-card">
+      <h5>Zoot-Suit Riots (1943)</h5>
+      <p style="font-size:0.88rem;">Anglo servicemen attacked Latino youth in zoot suits in Los Angeles — police arrested only Mexican Americans. Also: race riots in Detroit killed 34. Wartime migration and racial competition for jobs and housing intensified interethnic conflict.</p>
+    </div>
+  </div>
+
+  <h3>Political Shifts</h3>
+  <p>FDR won an unprecedented 4th term in 1944 with Harry Truman as VP. Roosevelt died April 12, 1945. Truman learned of the Manhattan Project and made the decision to use atomic bombs on Hiroshima (Aug. 6) and Nagasaki (Aug. 9) — Japan surrendered August 10, ending WWII. The war permanently expanded federal power, established the universal income tax, and launched the United States as a global superpower ready for the Cold War.</p>
+
+  <div class="key-box">
+    <h4>Big Takeaways: WWII's Domestic Impact</h4>
+    <ul>
+      <li>Ended the Great Depression through massive defense spending (not New Deal)</li>
+      <li>Expanded women's role in the workforce (Rosie the Riveter)</li>
+      <li>Accelerated the Great Migration and Black civil rights organizing</li>
+      <li>Japanese internment — a major civil liberties failure</li>
+      <li>GI Bill reshaped postwar American society (education, homeownership)</li>
+      <li>Military-industrial complex created; federal government permanently larger</li>
+      <li>U.S. emerged with atomic monopoly, intact homeland, dominant global position</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Study guide compiled from APUSH Unit IV (Chapters 21–24) · Covers 1890–1945 · Good luck on your test!
+</footer>
+
+</body>
+</html>
